@@ -1,6 +1,22 @@
 var cool = require('cool-ascii-faces');
-var pg = require('pg');
-var pool = new pg.pool();
+
+const Pool = require('pg-pool');
+const url = require('url')
+
+const params = url.parse(process.env.DATABASE_URL);
+const auth = params.auth.split(':');
+
+const config = {
+  user: auth[0],
+  password: auth[1],
+  host: params.hostname,
+  port: params.port,
+  database: params.pathname.split('/')[1],
+  ssl: true
+};
+
+const pool = new Pool(config);
+
 var express = require('express');
 var app = express();
 
@@ -29,7 +45,7 @@ app.get('/times', function(request, response) {
 });
 
 app.get('/db', function (request, response) {
-  pool.connect(process.env.DATABASE_URL, function(err, client, done) {
+  pool.connect(function(err, client, done) {
     client.query('SELECT * FROM test_table', function(err, result) {
       done();
       if (err)
