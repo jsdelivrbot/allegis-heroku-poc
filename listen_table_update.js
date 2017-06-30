@@ -3,7 +3,7 @@ var pg = require ('pg');
 const Pool = require('pg-pool');
 const url = require('url')
 
-const params = url.parse(process.env.DATABASE_URL);
+const params = url.parse(process.env.DATABASE_URLi||'postgres://nknlrletfhmijy:d38ecdcb9263124d05829c1a52e6df1c7f5d6eba5654dbf3abbaa7be7887810c@ec2-54-221-220-82.compute-1.amazonaws.com:5432/d7fq31b9ftkanl');
 const auth = params.auth.split(':');
 
 const config = {
