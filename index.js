@@ -56,28 +56,6 @@ app.get('/db', function (request, response) {
   });
 });
 
-app.get('/listen', function(request, response) {
-  var result = '';
-  pool.connect( function(err, client) {
-    if(err) {
-        console.log(err);
-    }   
-    client.on('notification', function(msg) {
-        if (msg.name === 'notification' && msg.channel === 'table_update') {
-            var pl = JSON.parse(msg.payload);
-            result = '*========*\n';
-            Object.keys(pl).forEach(function (key) {
-                console.log(key, pl[key]);
-		result = key + ': ' + pl[key] + '\n';
-            }); 
-            result='-========-\n';
-	    response.send(result);
-        }   
-    }); 
-    client.query("LISTEN table_update");
-  });
-});
-
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
