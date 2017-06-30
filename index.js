@@ -71,10 +71,10 @@ app.get('/listen', function(request, response) {
 		result = key + ': ' + pl[key] + '\n';
             }); 
             result='-========-\n';
+	    response.send(result);
         }   
     }); 
     client.query("LISTEN table_update");
-
   });
 });
 
