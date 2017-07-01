@@ -3,7 +3,7 @@ var cool = require('cool-ascii-faces');
 const Pool = require('pg-pool');
 const url = require('url')
 
-const params = url.parse(process.env.DATABASE_URL);
+const params = url.parse(process.env.DATABASE_URL||'postgres://postgres:@localhost:5432/mguse');
 const auth = params.auth.split(':');
 
 const config = {
