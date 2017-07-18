@@ -1,3 +1,5 @@
+require('newrelic');
+
 var pg = require ('pg');
 
 const Pool = require('pg-pool');

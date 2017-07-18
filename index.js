@@ -1,3 +1,5 @@
+require('newrelic');
+
 var cool = require('cool-ascii-faces');
 
 const Pool = require('pg-pool');
