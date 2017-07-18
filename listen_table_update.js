@@ -3,7 +3,7 @@ var pg = require ('pg');
 const Pool = require('pg-pool');
 const url = require('url')
 
-const params = url.parse(process.env.DATABASE_URLi||'postgres://postgres:@localhost:5432/mguse');
+const params = url.parse(process.env.DATABASE_URL||'postgres://postgres:@localhost:5432/mguse');
 const auth = params.auth.split(':');
 
 const config = {
