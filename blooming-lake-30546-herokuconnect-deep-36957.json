@@ -1,0 +1,52 @@
+{
+    "mappings": [
+        {
+            "object_name": "Account",
+            "config": {
+                "access": "read_only",
+                "sf_max_daily_api_calls": 30000,
+                "indexes": {
+                    "Talent_Profile_Last_Modified_Date__c": {
+                        "unique": false
+                    },
+                    "SystemModstamp": {
+                        "unique": false
+                    },
+                    "Talent_HRXML_Last_Modified_Date__c": {
+                        "unique": false
+                    },
+                    "Id": {
+                        "unique": true
+                    },
+                    "Talent_Profile_Last_Modified_By__c": {
+                        "unique": false
+                    }
+                },
+                "sf_polling_seconds": 120,
+                "applied_at": "2017-07-26T01:40:49.766418Z",
+                "fields": {
+                    "RecordTypeId": {},
+                    "Talent_Profile_Last_Modified_By__c": {},
+                    "Name": {},
+                    "Talent_Profile_Last_Modified_Date__c": {},
+                    "Talent_HRXML3__c": {},
+                    "Id": {},
+                    "CreatedDate": {},
+                    "Talent_Ownership__c": {},
+                    "Talent_HRXML__c": {},
+                    "Talent_HRXML2__c": {},
+                    "IsDeleted": {},
+                    "Talent_HRXML_Last_Modified_Date__c": {},
+                    "SystemModstamp": {}
+                },
+                "sf_notify_enabled": true
+            }
+        }
+    ],
+    "connection": {
+        "exported_at": "2017-07-27T17:22:56.368912+00:00",
+        "app_name": "blooming-lake-30546",
+        "organization_id": "00D9E000000D6kPUAS"
+    },
+    "version": 1
+}
